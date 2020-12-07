@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("client")
 public class TitleRest {
 
-	@Value("${title: nt found}")
+	@Value("${title: This is title not found}")
 	private String message;
 	
 	@GetMapping
