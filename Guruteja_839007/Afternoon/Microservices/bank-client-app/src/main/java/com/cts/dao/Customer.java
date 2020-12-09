@@ -18,7 +18,9 @@ public class Customer {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int customerID;
 	private String name;
+	
 	private LocalDate dob;
+	
 	public int getCustomerID() {
 		return customerID;
 	}

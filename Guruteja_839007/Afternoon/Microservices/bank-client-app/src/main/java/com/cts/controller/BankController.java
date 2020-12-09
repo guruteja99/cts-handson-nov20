@@ -23,6 +23,7 @@ public class BankController {
 
 	@Autowired
 	CustomerService customerService;
+	
 	@PostMapping
 	public Customer createCustomerAPI(@RequestBody Customer customer) {
 		Customer createdCustomer = customerService.addCustomer(customer);
