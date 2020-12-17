@@ -26,6 +26,5 @@ public class Student {
 	public String degree;
 	public String program;
 	public String studentType;
-	public List<Task> tasks;
 	
 }
