@@ -1,6 +1,7 @@
 package com.cts.model;
 
-import java.util.Date;
+
+import java.time.LocalDate;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -22,6 +23,6 @@ public class Task {
 	public int id;
 	public int studentId;
 	public String taskName;
-	public Date startDate;
-	public Date dueDate;
+	public LocalDate startDate;
+	public LocalDate dueDate;
 }

@@ -6,10 +6,10 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.cts.model.Task;
 import com.cts.dao.StudentDao;
 import com.cts.dao.TaskDao;
 import com.cts.model.Student;
+import com.cts.model.Task;
 
 @Service
 public class StudentService {
@@ -20,16 +20,15 @@ public class StudentService {
 	@Autowired
 	public TaskDao taskDao;
 	
-	public Student getDetails() {
-		Optional<Student> student = dao.findById(1);
+	public Student getDetails(int id) throws Exception {
+		Optional<Student> student = dao.findById(id);
 		if(student.isPresent())
-			return dao.getOne(1);
+			return student.get();
 		else
-			return null;
+			 throw new Exception("Oops! Details not found");
 	}
-	public List<Task> getTasks() {
-
-		List<Task> tasks =taskDao.findAllByStudentId(1);
+	public List<Task> getTasks(int id) {
+		List<Task> tasks =taskDao.findAllByStudentId(id);
 		return tasks;
 	}
 }

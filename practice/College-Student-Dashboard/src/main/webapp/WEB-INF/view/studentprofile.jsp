@@ -18,10 +18,10 @@
 <nav class="navbar navbar-expand-sm bg-success navbar-dark">  
   <div class="container-fluid">  
     <div class="navbar-header">  
-      <a class="navbar-brand" href="/">Academy</a>  
+      <a class="navbar-brand" href="/dashboard">Academy</a>  
     </div>  
     <ul class="nav navbar-nav">  
-      <li class="active"><a href="/">Profile</a></li>
+      <li class="active"><a href="/dashboard">Profile</a></li>
     </ul>  
   </div> 
   <div class="welcome">Welcome ${student.firstName}</div> 
@@ -35,9 +35,12 @@
 <tr><th>First Name:</th><td>${student.program}</td></tr>
 <tr><th>Program:</th><td>${student.studentType}</td></tr>
 </table>
-
+<br>
+<br>
+<strong style="font-size:20px">Your Tasks</strong>
 <table class="table">
-<thead><th colspan="2">Your Tasks</th></thead>
+<c:choose>
+<c:when test="${size>0}">
 <tr><th>Task</th><th>Start Date</th><th>Due Date</th></tr>
 <tbody>
 <c:forEach items="${tasks}" var="task">
@@ -48,6 +51,11 @@
 </tr>
 </c:forEach>
 </tbody>
+</c:when>
+<c:otherwise>
+<div>You are not assigned with any tasks</div>
+</c:otherwise>
+</c:choose>
 </table>
 </body>
 </html>
